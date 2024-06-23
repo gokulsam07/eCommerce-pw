@@ -2,7 +2,7 @@ import { PlaywrightTestConfig, chromium,firefox,webkit } from "@playwright/test"
 
 const config = {
     timeout :60000,
-    testDir:'/tests/ui',
+    testDir:'./tests/ui',
     fullyParallel: true,
     reporter: 'html',
     workers:5,
