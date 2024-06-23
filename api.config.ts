@@ -10,7 +10,7 @@ const config = {
         headless:false,
         viewport:{width :1280, height :720},
         actionTimeout :15000, 
-        screenshot:"on",
+        screenshot:"only-on-failure",
         ignoreHTTPErrors:true, 
     },
     projects: [
