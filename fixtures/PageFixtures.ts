@@ -4,6 +4,8 @@ import HomePage from '../pages/homePage';
 import RegistrationPage from '../pages/regristrationPage';
 import EditAccountPage from '../pages/com.pages.myaccount/editAccountPage';
 import MyAccountPage from '../pages/com.pages.myaccount/myAccountPage';
+import AddressBookPage from '../pages/com.pages.myaccount/addressBookPage';
+import OrderHistoryPage from '../pages/com.pages.myaccount/orderHistoryPage';
 
 type Fixtures = {
   loginPage: LoginPage;
@@ -11,6 +13,9 @@ type Fixtures = {
   registrationPage:RegistrationPage
   editAccountPage:EditAccountPage
   myAccountPage:MyAccountPage
+  addressBookPage:AddressBookPage
+  orderHistoryPage:OrderHistoryPage
+
   
 };
 
@@ -30,6 +35,12 @@ const test = base.extend<Fixtures>({
   },
   myAccountPage : async ({ page }, use) => {
     await use(new MyAccountPage(page));
+  },
+  addressBookPage : async ({ page }, use) => {
+    await use(new AddressBookPage(page));
+  },
+  orderHistoryPage : async ({ page }, use) => {
+    await use(new OrderHistoryPage(page));
   }
 
 });
