@@ -1,5 +1,6 @@
 import { Page } from '@playwright/test'
 
+
 class HomePage {
     private readonly searchBar = this.page.getByLabel("Search For Products")
     private readonly searchBtn = this.page.locator(".search-button .type-text")

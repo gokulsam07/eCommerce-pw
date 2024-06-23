@@ -100,7 +100,6 @@ class BrowserActions {
     await this.page.locator(locator).focus();
   }
 
-
 }
 
 export default BrowserActions;
