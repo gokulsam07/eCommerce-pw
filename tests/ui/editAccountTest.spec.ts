@@ -14,7 +14,7 @@ test.describe('Edit Account Details Test', () => {
       await page.waitForLoadState()
     });
   
-    test('Edit and save account info', async ({ page,myAccountPage,editAccountPage }) => {
+    test('Edit and save account info @sanity', async ({ page,myAccountPage,editAccountPage }) => {
         await myAccountPage.selectAccountMenu('Edit Account')
         await editAccountPage.editProfileDetailsAndSave('phone','6785432190')
         expect((await myAccountPage.validateMessage()).isVisible).toBeTruthy()

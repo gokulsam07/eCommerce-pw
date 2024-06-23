@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "api-test-chromium": "playwright test --config=api.config.ts --project=chromium",
-    "ui-test-chromium": "playwright test --config=ui.config.ts --project=chromium"
+    "ui-test-chromium": "playwright test --config=ui.config.ts --project=chromium",
+    "ui-sanity":"playwright test --config=ui.config.ts --project=chromium --grep=@sanity"
   },
   "keywords": [],
   "author": "",
