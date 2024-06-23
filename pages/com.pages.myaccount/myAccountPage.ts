@@ -11,8 +11,8 @@ class MyAccountPage {
         await this.page.locator(`xpath=//a[normalize-space()='${menu}']`).click();
     }
 
-    async validateMessage(validate:string):Promise<string|null>{
-        return await this.msg.textContent()
+    async validateMessage(){
+        return this.msg
     }
 
 }
