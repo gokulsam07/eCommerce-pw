@@ -7,6 +7,7 @@ const config = {
     reporter: 'html',
     workers:5,
     use:{
+        baseURL:'https://ecommerce-playground.lambdatest.io/index/php?',
         headless:false,
         viewport:{width :1280, height :720},
         actionTimeout :15000, 
