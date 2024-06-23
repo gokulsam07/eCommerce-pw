@@ -21,28 +21,13 @@ type Fixtures = {
 };
 
 const test = base.extend<Fixtures>({
-
-  loginPage: async ({ page }, use) => {
-    await use(new LoginPage(page));
-  },
-  homePage : async ({ page }, use) => {
-    await use(new HomePage(page));
-  },
-  registrationPage : async ({ page }, use) => {
-    await use(new RegistrationPage(page));
-  },
-  editAccountPage : async ({ page }, use) => {
-    await use(new EditAccountPage(page));
-  },
-  myAccountPage : async ({ page }, use) => {
-    await use(new MyAccountPage(page));
-  },
-  addressBookPage : async ({ page }, use) => {
-    await use(new AddressBookPage(page));
-  },
-  orderHistoryPage : async ({ page }, use) => {
-    await use(new OrderHistoryPage(page));
-  }
+  loginPage: async ({ page }, use) => use(new LoginPage(page)),
+  homePage: async ({ page }, use) => use(new HomePage(page)),
+  registrationPage: async ({ page }, use) => use(new RegistrationPage(page)),
+  editAccountPage: async ({ page }, use) => use(new EditAccountPage(page)),
+  myAccountPage: async ({ page }, use) => use(new MyAccountPage(page)),
+  addressBookPage: async ({ page }, use) => use(new AddressBookPage(page)),
+  orderHistoryPage: async ({ page }, use) => use(new OrderHistoryPage(page)),
 
 });
 
