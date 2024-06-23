@@ -1,6 +1,6 @@
 import { read } from 'fs';
 import { test, expect } from '../../fixtures/PageFixtures'
-import DataFactory from '../ui/data/DataFactory'
+import DataFactory from './data/DataFactory'
 
 
 

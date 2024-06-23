@@ -16,6 +16,7 @@ type Fixtures = {
   addressBookPage:AddressBookPage
   orderHistoryPage:OrderHistoryPage
 
+
   
 };
 

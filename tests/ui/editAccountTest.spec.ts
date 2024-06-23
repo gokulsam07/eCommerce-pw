@@ -1,6 +1,6 @@
 import {test,expect} from '../../fixtures/PageFixtures'
 import MyAccountPage from '../../pages/com.pages.myaccount/myAccountPage';
-import DataFactory from '../ui/data/DataFactory'
+import DataFactory from './data/DataFactory'
 
 
 test.describe('Edit Account Details Test', () => {
