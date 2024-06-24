@@ -1,4 +1,5 @@
-import { test as base, expect } from '@playwright/test';
+import {test as base, expect } from '@playwright/test';
+import {Page} from '@playwright/test'
 import LoginPage from '../pages/loginPage';
 import HomePage from '../pages/homePage';
 import RegistrationPage from '../pages/regristrationPage';
@@ -15,12 +16,13 @@ type Fixtures = {
   myAccountPage:MyAccountPage
   addressBookPage:AddressBookPage
   orderHistoryPage:OrderHistoryPage
-
+  currentContextNewPage:Page
+  newContextNewPage:Page
 
   
 };
 
-const test = base.extend<Fixtures>({
+let test = base.extend<Fixtures>({
   loginPage: async ({ page }, use) => use(new LoginPage(page)),
   homePage: async ({ page }, use) => use(new HomePage(page)),
   registrationPage: async ({ page }, use) => use(new RegistrationPage(page)),
@@ -28,7 +30,17 @@ const test = base.extend<Fixtures>({
   myAccountPage: async ({ page }, use) => use(new MyAccountPage(page)),
   addressBookPage: async ({ page }, use) => use(new AddressBookPage(page)),
   orderHistoryPage: async ({ page }, use) => use(new OrderHistoryPage(page)),
+})
 
-});
-
+test.extend({
+    currentContextNewPage: async ({ context }, use) => {
+      await use(await context.newPage());
+      await context.close();
+    },
+    newContextNewPage: async ({ browser }, use) => {
+      const context = await browser.newContext()
+      const page = await context.newPage()
+      await use(page)
+      await context.close()
+    }})
 export { test, expect };
