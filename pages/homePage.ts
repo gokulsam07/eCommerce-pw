@@ -1,23 +1,25 @@
 import { Page } from '@playwright/test'
+import BrowserActions from '../FrameworkUtils/BrowserActions'
 
 
 class HomePage {
-    private readonly searchBar = this.page.getByLabel("Search For Products")
+    private bActions:BrowserActions;
+    private readonly searchBar = "Search For Products"
     private readonly searchBtn = this.page.locator(".search-button .type-text")
-    private readonly shopByCat = this.page.getByLabel("Shop by Category")
+    private readonly shopByCat = "Shop by Category"
     constructor(private readonly page: Page) {
-
+        this.bActions=new BrowserActions(page)
     }
 
     async enterSearchString(q:string){
-        await this.searchBar.fill(q)
+        (await this.bActions.findElementByElementAttributes(this.searchBar,'label')).fill(q)
     }
     async searchForItem(){
         await this.searchBtn.click();
     }
 
     async expandLeftMenuAndShopByCategory(cat:string){
-        await this.shopByCat.click();
+        await this.bActions.clickElement(this.shopByCat)
         await this.page.locator(`//xpath='//span[normalize-space()='${cat}']`).click()
     }
 

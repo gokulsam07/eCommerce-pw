@@ -1,14 +1,17 @@
 import {test as base, expect } from '@playwright/test';
 import {Page} from '@playwright/test'
-import LoginPage from '../pages/loginPage';
-import HomePage from '../pages/homePage';
-import RegistrationPage from '../pages/regristrationPage';
-import EditAccountPage from '../pages/com.pages.myaccount/editAccountPage';
-import MyAccountPage from '../pages/com.pages.myaccount/myAccountPage';
-import AddressBookPage from '../pages/com.pages.myaccount/addressBookPage';
-import OrderHistoryPage from '../pages/com.pages.myaccount/orderHistoryPage';
+import LoginPage from '../pages/LoginPage';
+import HomePage from '../pages/HomePage';
+import RegistrationPage from '../pages/RegristrationPage';
+import EditAccountPage from '../pages/com.pages.myaccount/EditAccountPage';
+import MyAccountPage from '../pages/com.pages.myaccount/MyAccountPage';
+import AddressBookPage from '../pages/com.pages.myaccount/AddressBookPage';
+import OrderHistoryPage from '../pages/com.pages.myaccount/OrderHistoryPage';
+import { RestController } from '../FrameworkUtils/RestController';
 
 type Fixtures = {
+//for API
+  restController:RestController
   loginPage: LoginPage;
   homePage: HomePage;
   registrationPage:RegistrationPage
@@ -23,6 +26,7 @@ type Fixtures = {
 };
 
 let test = base.extend<Fixtures>({
+  restController :async  ({ request }, use) => use(new RestController(request)),
   loginPage: async ({ page }, use) => use(new LoginPage(page)),
   homePage: async ({ page }, use) => use(new HomePage(page)),
   registrationPage: async ({ page }, use) => use(new RegistrationPage(page)),

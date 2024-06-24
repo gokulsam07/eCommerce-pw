@@ -10,19 +10,13 @@ const config = {
         headless:false,
         viewport:{width :1280, height :720},
         actionTimeout :15000, 
-        screenshot:"only-on-failure",
         ignoreHTTPErrors:true, 
+        baseURL:'https://ecommerce-playground.lambdatest.io/index.php?'
     },
     projects: [
         {
             name: 'Chromium',
-            use: { browserName: 'chromium' }
-        }, {
-            name: 'Firefox',
-            use: { browserName: 'firefox' }
-        }, {
-            name: 'WebKit',
-            use: { browserName: 'webkit' }
+            use: { browserName: 'chromium' ,baseURL:'https://ecommerce-playground.lambdatest.io/index.php?'}
         }]
 }
 
