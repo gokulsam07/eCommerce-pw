@@ -7,13 +7,12 @@ import EditAccountPage from '../pages/com.pages.myaccount/EditAccountPage';
 import MyAccountPage from '../pages/com.pages.myaccount/MyAccountPage';
 import AddressBookPage from '../pages/com.pages.myaccount/AddressBookPage';
 import OrderHistoryPage from '../pages/com.pages.myaccount/OrderHistoryPage';
-import { RestController } from '../FrameworkUtils/RestController';
+import { RestController,createRequestContext } from '../FrameworkUtils/RestController';
 
 type Fixtures = {
-//for API
   restController:RestController
-  loginPage: LoginPage;
-  homePage: HomePage;
+  loginPage: LoginPage
+  homePage: HomePage
   registrationPage:RegistrationPage
   editAccountPage:EditAccountPage
   myAccountPage:MyAccountPage
@@ -21,12 +20,10 @@ type Fixtures = {
   orderHistoryPage:OrderHistoryPage
   currentContextNewPage:Page
   newContextNewPage:Page
-
-  
 };
 
 let test = base.extend<Fixtures>({
-  restController :async  ({ request }, use) => use(new RestController(request)),
+  restController :async  ({baseURL}, use) => use((new RestController(await createRequestContext(baseURL)))),
   loginPage: async ({ page }, use) => use(new LoginPage(page)),
   homePage: async ({ page }, use) => use(new HomePage(page)),
   registrationPage: async ({ page }, use) => use(new RegistrationPage(page)),

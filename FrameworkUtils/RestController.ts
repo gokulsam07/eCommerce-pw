@@ -1,13 +1,10 @@
 import { request, APIResponse, APIRequestContext, PlaywrightTestOptions } from '@playwright/test';
 
 export class RestController {
-  
-  constructor(private requestContext: APIRequestContext) {
-    
-  }
-  
+  constructor(private rContext: APIRequestContext) {}
 
-  private async sendRequest(method: string, url: string, headers?: Record<string, string>, body?: any): Promise<APIResponse> {
+
+  private async sendRequest(method: string, url?: string, headers?: Record<string, string>, body?: any): Promise<APIResponse> {
     const options: Record<string, any> = {
       method,
       headers,
@@ -16,37 +13,37 @@ export class RestController {
     if (body) {
       options.data = body;
     }
-
-    const response = await this.requestContext.fetch(url, options);
-    return response;
+    var response;
+    if(url){
+      response = await this.rContext.fetch(url, options);
+    }
+    return response
+   
   }
 
-  async get(url: string, headers?: Record<string, string>): Promise<APIResponse> {
+  async get(url?: string,headers?: Record<string, string>): Promise<APIResponse> {
     return this.sendRequest('GET', url, headers);
   }
 
-  async post(url: string, body: any, headers?: Record<string, string>): Promise<APIResponse> {
+  async post(body: any, headers?: Record<string, string>,url?: string): Promise<APIResponse> {
     return this.sendRequest('POST', url, headers, body);
   }
 
-  async put(url: string, body: any, headers?: Record<string, string>): Promise<APIResponse> {
+  async put(body: any, headers?: Record<string, string>,url?: string): Promise<APIResponse> {
     return this.sendRequest('PUT', url, headers, body);
   }
 
-  async delete(url: string, headers?: Record<string, string>): Promise<APIResponse> {
+  async delete( headers?: Record<string, string>,url?: string): Promise<APIResponse> {
     return this.sendRequest('DELETE', url, headers);
   }
 
-  async patch(url: string, body: any, headers?: Record<string, string>): Promise<APIResponse> {
+  async patch( body: any, headers?: Record<string, string>,url?: string): Promise<APIResponse> {
     return this.sendRequest('PATCH', url, headers, body);
   }
 
 }
 
-export async function createRequestContext(baseURL: string, options?: PlaywrightTestOptions) {
-  const requestContext = await request.newContext({
-    baseURL,
-    ...options,
-  });
+export async function createRequestContext(baseURL?:string,options?: PlaywrightTestOptions) {
+  const requestContext = await request.newContext({baseURL,...options})
   return requestContext;
 }
