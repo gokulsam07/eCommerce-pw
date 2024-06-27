@@ -3,11 +3,10 @@ import DataFactory from './data/DataFactory'
 
 
 test.describe('Login validation', () => {
-    test.beforeEach(async ({ page,baseURL,loginPage }) => {
-      await page.goto(`${baseURL}route=account/login`);
+    test.beforeEach(async ({ page,loginPage }) => {
+      await page.goto(`index.php?route=account/login`);
       await page.waitForLoadState();
       await loginPage.enterUserName(DataFactory.USERNAME);
-
     });
   
     test('Login Test - Valid credentials @sanity', async ({ page,loginPage }) => {
