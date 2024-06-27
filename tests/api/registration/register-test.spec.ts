@@ -1,6 +1,6 @@
 
-import { test, expect } from '../../../Fixtures/PageFixtures';
-import { generateUniqueEmail, readJsonFile } from '../../../FrameworkUtils/Utils';
+import { test, expect } from '../../../fixtures/page-fixtures';
+import { generateUniqueEmail, readJsonFile } from '../../../framework-utils/utils';
 
 
 test.describe('Register & login',()=>{
@@ -16,7 +16,7 @@ test.describe('Register & login',()=>{
 
     test('POST Register user and validate login @sanity', async ({ request}) => {
         let emailValue: string=generateUniqueEmail()
-        let fData = readJsonFile('tests/api/Registration/data/RegisterUser.json')
+        let fData = readJsonFile('tests/api/registration/data/register-user.json')
         fData.email=emailValue
         const response = await request.post(`index.php?route=account/register`, { multipart:fData});
         expect(response.ok()).toBeTruthy();

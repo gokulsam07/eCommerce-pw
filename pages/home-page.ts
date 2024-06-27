@@ -1,5 +1,5 @@
 import { Page } from '@playwright/test'
-import BrowserActions from '../FrameworkUtils/BrowserActions'
+import BrowserActions from '../framework-utils/browser-actions'
 
 
 class HomePage {

@@ -1,11 +1,11 @@
 
-import {test,expect} from '../../../Fixtures/PageFixtures'
-import { readJsonFile } from '../../../FrameworkUtils/Utils'
+import {test,expect} from '../../../fixtures/page-fixtures'
+import { readJsonFile } from '../../../framework-utils/utils'
 
 
 test.describe('Logout & validate',()=>{
     test('POST Logout & validate', async ({ request}) => {
-        let fData = readJsonFile('tests/api/Registration/data/RegisterUser.json')
+        let fData = readJsonFile('tests/api/registration/data/register-user.json')
         const loginForm = {
             email: fData.email,
             password: fData.password

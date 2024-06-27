@@ -1,12 +1,12 @@
 import {test as base, expect } from '@playwright/test';
 import {Page} from '@playwright/test'
-import LoginPage from '../pages/LoginPage';
-import HomePage from '../pages/HomePage';
-import RegistrationPage from '../pages/RegristrationPage';
-import EditAccountPage from '../pages/com.pages.myaccount/EditAccountPage';
-import MyAccountPage from '../pages/com.pages.myaccount/MyAccountPage';
-import AddressBookPage from '../pages/com.pages.myaccount/AddressBookPage';
-import OrderHistoryPage from '../pages/com.pages.myaccount/OrderHistoryPage';
+import LoginPage from '../pages/login-page';
+import HomePage from '../pages/home-page';
+import RegistrationPage from '../pages/registrattion-page';
+import EditAccountPage from '../pages/com.pages.myaccount/edit-account-page';
+import MyAccountPage from '../pages/com.pages.myaccount/my-account-page';
+import AddressBookPage from '../pages/com.pages.myaccount/address-book-page';
+import OrderHistoryPage from '../pages/com.pages.myaccount/order-history-page';
 
 type Fixtures = {
   loginPage: LoginPage

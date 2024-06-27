@@ -1,5 +1,5 @@
-import {test,expect} from '../../Fixtures/PageFixtures'
-import DataFactory from './data/DataFactory'
+import {test,expect} from '../../fixtures/page-fixtures'
+import DataFactory from './data/data-factory'
 
 
 test.describe('Edit Account Details Test', () => {

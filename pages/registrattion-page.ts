@@ -1,5 +1,5 @@
-import { Locator, Page, expect } from '@playwright/test'
-import { timeStamp } from 'console';
+import { Locator, Page } from '@playwright/test'
+
 
 export default class RegistrationPage {
     private readonly firstName = this.page.locator("#input-firstname")
