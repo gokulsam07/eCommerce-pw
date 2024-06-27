@@ -5,18 +5,18 @@ const config = {
     testDir:'./tests/api',
     fullyParallel: true,
     reporter: 'html',
-    workers:5,
+    workers:4,
     use:{
         headless:false,
         viewport:{width :1280, height :720},
         actionTimeout :15000, 
         ignoreHTTPErrors:true, 
-        baseURL:'https://ecommerce-playground.lambdatest.io/index.php?'
+        baseURL:'https://ecommerce-playground.lambdatest.io/'
     },
     projects: [
         {
             name: 'Chromium',
-            use: { browserName: 'chromium' ,baseURL:'https://ecommerce-playground.lambdatest.io/index.php?'}
+            use: { browserName: 'chromium' ,baseURL:'https://ecommerce-playground.lambdatest.io/'}
         }]
 }
 

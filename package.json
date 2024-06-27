@@ -6,13 +6,14 @@
   "scripts": {
     "api-test-chromium": "playwright test --config=api.config.ts --project=chromium",
     "ui-test-chromium": "playwright test --config=ui.config.ts --project=chromium",
-    "ui-sanity":"playwright test --config=ui.config.ts --project=chromium --grep=@sanity"
+    "ui-sanity": "playwright test --config=ui.config.ts --project=chromium --grep=@sanity",
+    "api-sanity": "playwright test --config=api.config.ts --project=chromium --grep=@sanity"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.44.1",
+    "@playwright/test": "^1.45.0",
     "@types/node": "^20.14.8"
   },
   "dependencies": {

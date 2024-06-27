@@ -5,9 +5,9 @@ const config = {
     testDir:'./tests/ui',
     fullyParallel: true,
     reporter: 'html',
-    workers:5,
+    workers:1,
     use:{
-        baseURL:'https://ecommerce-playground.lambdatest.io/index/php?',
+        baseURL:'https://ecommerce-playground.lambdatest.io/',
         headless:false,
         viewport:{width :1280, height :720},
         actionTimeout :15000, 
