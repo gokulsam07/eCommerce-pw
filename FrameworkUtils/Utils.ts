@@ -13,6 +13,13 @@ export function generateUniqueEmail(): string {
   return `testuser${timestamp}@example.com`
 }
 
+export function generateRandomPhoneNumber(): string {
+    const randomNumber = Math.floor(9000000000 + Math.random() * 1000000000)
+    return '9' + randomNumber.toString().substring(1)
+}
+
+
+
 
 
 

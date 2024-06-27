@@ -1,5 +1,5 @@
 import { read } from 'fs';
-import { test, expect } from '../../fixtures/PageFixtures'
+import { test, expect } from '../../Fixtures/PageFixtures'
 import DataFactory from './data/DataFactory'
 
 

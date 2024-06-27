@@ -6,11 +6,11 @@ class EditAccountPage {
     private readonly email = this.page.locator("#input-email")
     private readonly phone = this.page.locator("#input-telephone")
     private readonly submit = this.page.locator("input[value='Continue']")
-    constructor(private readonly page:Page){
+    constructor(private readonly page: Page) {
 
     }
 
-    async selectAccountMenu(menu:string){
+    async selectAccountMenu(menu: string) {
         await this.page.locator(`xpath=//a[normalize-space()='${menu}']`).click();
     }
     async editProfileDetailsAndSave(field: 'firstName' | 'lastName' | 'email' | 'phone', value: string): Promise<void> {
@@ -33,6 +33,27 @@ class EditAccountPage {
 
         await this.submit.click();
     }
+
+    async validateFields(field: 'firstName' | 'lastName' | 'email' | 'phone', value: string): Promise<boolean> {
+        let retrieved: string
+        switch (field) {
+            case 'firstName':
+                retrieved = await this.firstName.getAttribute('value')??""
+                return retrieved?.includes(value)
+            case 'lastName':
+                retrieved = await this.lastName.getAttribute('value')??""
+                return retrieved?.includes(value)
+            case 'email':
+                retrieved = await this.email.getAttribute('value')??""
+                return retrieved?.includes(value)
+            case 'phone':
+                retrieved = await this.phone.getAttribute('value')??""
+                return retrieved?.includes(value)
+            default:
+                throw new Error(`Unknown field: ${field}`);
+        }
+    }
+
 
 }
 
