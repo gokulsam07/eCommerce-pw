@@ -11,10 +11,10 @@ This project uses Playwright's automation capabilities with TypeScript binding t
 ### Installation
 
 1. Clone the repository: `git clone https://github.com/gokulsam07/eCommerce-pw.git`
-2. Install dependencies: 
-        a. node.js: Download node.js from `https://nodejs.org/en/download/prebuilt-installer` and install
-        c. playwright: `npm install playwright`
-        d. axe-core: `npm install axe-core`
+2. Install dependencies:
+   - node.js: Download node.js from `https://nodejs.org/en/download/prebuilt-installer` and install
+   - playwright: `npm install playwright`
+   - axe-core: `npm install axe-core`
 
 ### Project Structue
 
