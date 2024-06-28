@@ -21,15 +21,16 @@ choco install nodejs
 ### Project Structue
 
 eCommerce-pw/
-├── fixtures/
-├── framework-utils/
-├── pages/
-├── tests/
-│   ├── api/
-│   └── ui/
-├── api.config.ts
-├── ui.config.ts
-└── playwright.config.ts
+    - fixtures/
+    - framework-utils/
+    - pages/
+    - tests/
+        - api/
+        - ui/
+    - package.json
+    - api.config.ts
+    - ui.config.ts
+    - playwright.config.ts
 
 
 - fixtures/: Contains playwright's test fixture extension of page objects to be extended for test methods on the fly
