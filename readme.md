@@ -2,8 +2,6 @@
 
 This project uses Playwright's automation capabilities with TypeScript binding to test a demo eCommerce website's functionality, APIs, and a bit of accessibility checks!
 
-## Getting Started
-choco install nodejs
 ### Prerequisites
 
 * node.js
@@ -20,40 +18,21 @@ choco install nodejs
 
 ### Project Structue
 
-eCommerce-pw/
-    - fixtures/
-    - framework-utils/
-    - pages/
-    - tests/
-        - api/
-        - ui/
-        - accessibility/
-    - package.json
-    - api.config.ts
-    - ui.config.ts
-    - playwright.config.ts
+```
+eCommerce-pw/                       # root dir
+├── fixtures/                       # contains playwright's test fixture extension of page objects to be extended for test methods on the fly
+├── framework-utils/                # includes utility functions and helpers for common operations across the test framework
+├── pages/                          # contains page object model classes representing different web pages for  page interactions
+├── tests/                          # directory for test scripts
+│   ├── api/                        # contains tests for validating the API endpoints
+│   ├── ui/                         # contains tests for validating the UI interactions
+│   └── accessibility/              # contains accessibility checks
+├── package.json                    # manage project dependencies & maintain npm scripts for running tests with different configuration
+├── api.config.ts                   # configuration settings specific to API testing, such as base URLs and headers
+├── ui.config.ts                    # configuration settings specific to UI testing, including browser settings and viewport sizes
+└── playwright.config.ts            # global common playwright configuration file to test the whole test directory
 
-
-- fixtures/: Contains playwright's test fixture extension of page objects to be extended for test methods on the fly
-
-- framework-utils/: Includes utility functions and helpers for common operations across the test framework
-
-- pages/: Contains Page Object Model (POM) classes representing different web pages for  page interactions
-
-- tests/: Directory for test scripts:
-    - api/: Contains tests for validating the backend API endpoints
-    - ui/: Contains tests for validating the UI interactions
-    - accessibility/: Contains accessibility checks
-
-- package.json: Manage project dependencies & npm scripts for running tests with differnt configuration
-
-- api.config.ts: Configuration settings specific to API testing, such as base URLs and headers
-
-- playwright.config.ts: Global common playwright configuration file to test the whole test directory
-
-- ui.config.ts: Configuration settings specific to UI testing, including browser settings and viewport sizes
-
-
+```
 
 ### Test Runs
 
