@@ -14,7 +14,7 @@ This project uses Playwright's automation capabilities with TypeScript binding t
 2. Install dependencies:
    - node.js: Download node.js from `https://nodejs.org/en/download/prebuilt-installer` and install
    - playwright: `npm install playwright`
-   - axe-core: `npm install axe-core`
+   - axe-core: `npm install @axe-core/playwright`
 
 ### Project Structue
 
