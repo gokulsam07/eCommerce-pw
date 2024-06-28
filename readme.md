@@ -27,6 +27,7 @@ eCommerce-pw/
     - tests/
         - api/
         - ui/
+        - accessibility/
     - package.json
     - api.config.ts
     - ui.config.ts
