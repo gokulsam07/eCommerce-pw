@@ -1,5 +1,4 @@
 # eCommerce-Playwright-TS
-=============================
 
 This project uses Playwright's automation capabilities with TypeScript binding to test a demo eCommerce website's functionality, APIs, and a bit of accessibility checks!
 
@@ -31,6 +30,7 @@ eCommerce-pw/
 ├── api.config.ts
 ├── ui.config.ts
 └── playwright.config.ts
+
 
 - fixtures/: Contains playwright's test fixture extension of page objects to be extended for test methods on the fly
 
