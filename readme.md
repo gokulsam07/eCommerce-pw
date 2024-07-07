@@ -37,8 +37,8 @@ eCommerce-pw/                       # root dir
 ### Test Runs
 
 * Run all the available tests under the testDir : npx playwright test
-* Run UI specific tests : `npm run api-test-chromium`
-* Run API specific tests : `npm run ui-test-chromium`
+* Run UI specific tests : `npm run ui-test-chromium`
+* Run API specific tests : `npm run api-test-chromium`
 * Run Sanity test for UI : `npm run ui-sanity`
 * Run Sanity test for API : `npm run api-sanity`
 
